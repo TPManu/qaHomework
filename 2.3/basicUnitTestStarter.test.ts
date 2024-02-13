@@ -3,16 +3,25 @@ describe("Testing the calculator", () => {
       expect(calculator.add(2, 50)).toBe(52);
     });
     test("Addition works", () => {
-      expect(true).toBeTruthy();
+      expect(calculator.add(2,2)).toBe(4);
     });
     test("Subtraction works", () => {
-      expect(true).toBeTruthy();
+      expect(calculator.subtract(4,3)).toBe(1);
     });
     test("Multiplication works", () => {
-      expect(true).toBeTruthy();
+      expect(calculator.multiply(3,3)).toBe(9);
     });
     test("Division works", () => {
-      expect(true).toBeTruthy();
+      expect(calculator.divide(25,5)).toBe(5);
+    });
+    test("One Number Is Less Than Another", () => {
+      expect(calculator.subtract(10,9)).toBeLessThan(5);
+    });
+    test("One Number Is Greater Than Another", () => {
+      expect(calculator.add(5,5)).toBeGreaterThan(9);
+    });
+    test("One Number Is Equal To Another Number", () => {
+      expect(calculator.multiply(7,1)).toEqual(7);
     });
     describe("Stretch Goals", () => {
       test("(2+2)/4 == 1", () => {
