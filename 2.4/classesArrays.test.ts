@@ -7,21 +7,43 @@ const driver = new Builder().withCapabilities(Capabilities.chrome()).build();
 
 class Employees {
   // Write a class that holds the name, phone, and title for the employee.
+    name: string;
+    phone: number;
+    title: string;
+
+    constructor(name: string, phone: number, title: string) {
+      this.name =name;
+      this.phone =phone;
+      this.title =title;
+    };
 }; 
 
 let employees: Array<Employees> = [
   //Create an array of four employees using your class. 
+  new Employees("Jerry Smith", 5474832984, "Father"),
+  new Employees("Beth Smith", 2342431456, "Mother"),
+  new Employees("Summer Smtih", 8750342930, "Sister"),
+  new Employees("Morty Smtih",9875648397, "Brother"),
 ]
 
-const addEmployee: By = By.//fill in the blank
-const newEmployee: By = By.// fill in the blank
-const nameInput: By = By. // fill in the blank
-const phoneInput: By = By. // fill in the blank
-const titleInput: By = By. // fill in the blank
-const saveBtn: By = By. // fill in the blank 
+const addEmployee: By = By.name("addEmployee");
+const newEmployee: By = By.xpath('//li[text() = "New Employee"]');
+const nameInput: By = By.name("nameEntry");
+const phoneInput: By = By.name("phoneEntry");
+const titleInput: By = By.name("titleEntry");
+const saveBtn: By = By.id("saveBtn");
 
 let myFunc = async (employees) => {
    //Create a function to add an employee.
+   await driver.findElement(addEmployee).click();
+   await driver.findElement(newEmployee).click();
+   await driver.findElement(nameInput).clear();
+   await driver.findElement(nameInput).sendKeys(employees.name);
+   await driver.findElement(phoneInput).clear();
+   await driver.findElement(phoneInput).sendKeys(employees.phone);
+   await driver.findElement(titleInput).clear();
+   await driver.findElement(titleInput).sendKeys(employees.title);
+   await driver.findElement(saveBtn).click();
 }; 
 
 describe("should add employees to employee manager", () => {
