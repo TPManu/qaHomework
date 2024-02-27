@@ -7,8 +7,8 @@ const page = new employeeManagerPage(driver, 'https://devmountain-qa.github.io/e
 const empPage = new employeeManagerPage(driver, 'https://devmountain-qa.github.io/employee-manager/1.2_Version/index.html');
 
 test("Promoted Phillip to CEO, Fired Bernice Ortiz", async () => {
-    await page.navigate();
-    await page.click(empPage.berniceOrtiz);
+    await empPage.navigate();
+    await page.click(page.berniceOrtiz);
     await driver.sleep(1000);
     await page.sendKeys(empPage.titleEntry, "fired");
     await driver.sleep(1000);

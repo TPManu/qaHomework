@@ -4,8 +4,8 @@ const chromedriver = require('chromedriver');
 export class employeeManagerPage {
     driver: WebDriver;
     url: string = "https://devmountain-qa.github.io/employee-manager/1.2_Version/index.html";
-    berniceOrtiz: By = By.name("employee1")
-    phillipWeaver: By = By.name("employee3")
+    berniceOrtiz: By = By.name("employee1");
+    phillipWeaver: By = By.name("employee3");
     nameEntry: By = By.name("nameEntry");
     titleEntry: By = By.name("titleEntry");
     saveBtn: By = By.id("saveBtn");
