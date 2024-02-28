@@ -35,4 +35,5 @@ export class employeeManagerPage {
         await this.driver.wait(until.elementLocated(elementBy));
         return (await this.driver.findElement(elementBy)).click();
     };
-}
+
+};
