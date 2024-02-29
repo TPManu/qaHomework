@@ -8,7 +8,7 @@ interface Options {
     //if no url is supplied we give it one or pass back an error. 
 }; 
 
-export class BasePage {
+export class basePage {
     driver: WebDriver; 
     url: string; 
 
